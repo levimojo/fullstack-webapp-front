@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Employee} from "./employee";
+import {environment} from "../environments/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
-  private apiServerUrl = '';
+  private apiServerUrl = environment.apiBaseUrl;
   //using http client to make http requests to the backend
   constructor(private http: HttpClient) {}
 
